@@ -4,4 +4,10 @@
     <h2><%: Title %>.</h2>
     <h3>Your application description page.</h3>
     <p>Use this area to provide additional information.</p>
+
+    <asp:Calendar ID="calDataInicio" runat="server"></asp:Calendar>
+
+    <br />
+    <asp:TextBox ID="txtData" runat="server"></asp:TextBox>
+    <asp:Button ID="btnSalvar" runat="server" CssClass="btn btn-primary" Text="Gravar" OnClick="btnSalvar_Click"/> 
 </asp:Content>
