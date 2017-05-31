@@ -3,8 +3,6 @@
     <h1>Cadastro de Categorias</h1>
     <br />
     
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-
         <asp:Label ID="Nome" runat="server" Text="Nome"></asp:Label>
         <asp:TextBox ID="txtNome" runat="server"></asp:TextBox>
         <br /><br />
@@ -18,8 +16,10 @@
         <br /><br />
 
         <asp:Button CssClass="btn btn-primary" ID="btnSalvar" runat="server" Text="Salvar" OnClick="btnSalvar_Click" />
-        <asp:Button CssClass="btn btn-danger" ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />
+        <asp:Button CssClass="btn btn-primary" ID="btnAlterar" runat="server" Text="Alterar" OnClick="btnAlterar_Click" />
+        <asp:Button CssClass="btn btn-danger" ID="btnExcluir" runat="server" Text="Excluir" OnClick="btnExcluir_Click" />
+        <asp:Button CssClass="btn btn-info" ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />
 
-    </asp:UpdatePanel>
+        
 
 </asp:Content>

@@ -1,4 +1,5 @@
-﻿using Aula2505.Model;
+﻿using Aula2505.Controllers;
+using Aula2505.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,7 @@ namespace Aula2505.Views.Categorias
             Session["Descricao"] = txtDescricao.Text;
             Session["Ativo"] = ckbAtivo.Checked;
 
-            BaseDadosContainer contexto = new BaseDadosContainer();
+            CategoriasController ctrl = new CategoriasController();
 
             Categoria cat = new Categoria();
 
@@ -36,8 +37,18 @@ namespace Aula2505.Views.Categorias
             cat.Descricao = Session["Descricao"].ToString();
             cat.Ativo = Convert.ToBoolean(Session["Ativo"].ToString());
 
-            contexto.Categorias.Add(cat);
-            contexto.SaveChanges();
+            ctrl.Adicionar(cat);
+
+        }
+
+        protected void btnExcluir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnAlterar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
