@@ -23,10 +23,11 @@ namespace DoaRoupa.View
             Session["Tipo"] = rdbTipo.SelectedValue;
 
             ControllerRoupa ctrl = new ControllerRoupa();
+            ControllerDoador ctrlD = new ControllerDoador();
 
             Roupa roupa = new Roupa();
 
-            roupa.Doador = Session["Nome"].ToString();
+            roupa.Doador = ctrlD.LocalizarPorCPF(Convert.ToInt32(Session["Nome"].ToString()));
             roupa.DescricaoRoupa = Session["Descricao"].ToString();
             roupa.TipoRoupa = Session["Tipo"].ToString();
 
