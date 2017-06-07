@@ -27,8 +27,8 @@ namespace DoaRoupa.View
 
             Roupa roupa = new Roupa();
 
-            roupa.Doador = ctrlD.LocalizarPorCPF(Convert.ToInt32(Session["Nome"].ToString()));
-            roupa.DescricaoRoupa = Session["Descricao"].ToString();
+            roupa.Doador = ctrlD.LocalizarPorCPF(Session["Nome"].ToString());
+            roupa.DescricaoRoupa = Session["Roupa"].ToString();
             roupa.TipoRoupa = Session["Tipo"].ToString();
 
             ctrl.AdicionarRoupa(roupa);

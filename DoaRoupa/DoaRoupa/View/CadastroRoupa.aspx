@@ -15,7 +15,7 @@
     <br /><br />
 
     <asp:Label ID="lblRoupa" runat="server" Text="Descrição da Roupa"></asp:Label>
-    <asp:TextBox ID="txtRoupa" runat="server"></asp:TextBox>
+    <asp:TextBox ID="txtRoupa" runat="server" TextMode="MultiLine"></asp:TextBox>
     <br /><br />
 
     <asp:Button CssClass="btn btn-primary" ID="btnSalvar" runat="server" Text="Salvar" OnClick="btnSalvar_Click" />

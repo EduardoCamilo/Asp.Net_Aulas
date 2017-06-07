@@ -23,7 +23,7 @@ namespace DoaRoupa.Models
         public int Id { get; set; }
         public string Nome { get; set; }
         public int Telefone { get; set; }
-        public int CPF { get; set; }
+        public string CPF { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Roupa> Roupa { get; set; }

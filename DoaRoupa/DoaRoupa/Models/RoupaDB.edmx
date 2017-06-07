@@ -29,7 +29,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Telefone" Type="int" Nullable="false" />
-    <Property Name="CPF" Type="int" Nullable="false" />
+    <Property Name="CPF" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <Association Name="RoupaDoador">
     <End Role="Roupa" Type="RoupaDB.Store.Roupas" Multiplicity="*" />
@@ -72,7 +72,7 @@
           <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Telefone" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Roupa" Relationship="RoupaDB.RoupaDoador" FromRole="Doador" ToRole="Roupa" />
-          <Property Name="CPF" Type="Int32" Nullable="false" />
+          <Property Name="CPF" Type="String" Nullable="false" />
         </EntityType>
         <Association Name="RoupaDoador">
           <End Type="RoupaDB.Roupa" Role="Roupa" Multiplicity="*" />

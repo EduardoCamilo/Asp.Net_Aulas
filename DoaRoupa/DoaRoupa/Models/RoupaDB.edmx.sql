@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/01/2017 22:11:35
+-- Date Created: 06/06/2017 20:14:27
 -- Generated from EDMX file: C:\Users\1530405\Source\Repos\Asp.Net_Aulas\DoaRoupa\DoaRoupa\Models\RoupaDB.edmx
 -- --------------------------------------------------
 
@@ -50,7 +50,7 @@ CREATE TABLE [dbo].[Doadores] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Nome] nvarchar(max)  NOT NULL,
     [Telefone] int  NOT NULL,
-    [CPF] int  NOT NULL
+    [CPF] nvarchar(max)  NOT NULL
 );
 GO
 

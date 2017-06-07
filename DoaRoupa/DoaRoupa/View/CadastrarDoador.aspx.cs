@@ -27,7 +27,7 @@ namespace DoaRoupa.View
             Doador doador = new Doador();
 
             doador.Nome = Session["Nome"].ToString();
-            doador.CPF = Convert.ToInt32(Session["CPF"].ToString());
+            doador.CPF = Session["CPF"].ToString();
             doador.Telefone = Convert.ToInt32(Session["Telefone"].ToString());
 
             ctrl.AdicionarDoador(doador);

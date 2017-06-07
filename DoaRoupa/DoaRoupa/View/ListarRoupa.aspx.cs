@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DoaRoupa.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,10 @@ namespace DoaRoupa.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ControllerRoupa ctrl = new ControllerRoupa();
 
+            gvRoupas.DataSource = ctrl.Listar();
+            gvRoupas.DataBind();
         }
     }
 }

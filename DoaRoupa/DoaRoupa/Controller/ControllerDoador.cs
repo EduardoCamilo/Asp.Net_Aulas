@@ -20,9 +20,11 @@ namespace DoaRoupa.Controller
             return contexto.Doadores.ToList();
         }
 
-        public Doador LocalizarPorCPF(int cpf)
+        public Doador LocalizarPorCPF(string cpf)
         {
-            return contexto.Doadores.Find(cpf);
+            return contexto.Doadores.Where(d => d.CPF == cpf).FirstOrDefault();
+
+            //return contexto.Doadores.Find(cpf);
         }
 
         public void Editar(Doador doador)
