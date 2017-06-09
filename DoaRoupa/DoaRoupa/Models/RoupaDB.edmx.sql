@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/06/2017 20:14:27
+-- Date Created: 06/08/2017 21:47:22
 -- Generated from EDMX file: C:\Users\1530405\Source\Repos\Asp.Net_Aulas\DoaRoupa\DoaRoupa\Models\RoupaDB.edmx
 -- --------------------------------------------------
 
@@ -41,7 +41,7 @@ CREATE TABLE [dbo].[Roupas] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [DescricaoRoupa] nvarchar(max)  NOT NULL,
     [TipoRoupa] nvarchar(max)  NOT NULL,
-    [Doador_Id] int  NOT NULL
+    [DoadorId] int  NOT NULL
 );
 GO
 
@@ -74,10 +74,10 @@ GO
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
 
--- Creating foreign key on [Doador_Id] in table 'Roupas'
+-- Creating foreign key on [DoadorId] in table 'Roupas'
 ALTER TABLE [dbo].[Roupas]
 ADD CONSTRAINT [FK_RoupaDoador]
-    FOREIGN KEY ([Doador_Id])
+    FOREIGN KEY ([DoadorId])
     REFERENCES [dbo].[Doadores]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
@@ -86,7 +86,7 @@ GO
 -- Creating non-clustered index for FOREIGN KEY 'FK_RoupaDoador'
 CREATE INDEX [IX_FK_RoupaDoador]
 ON [dbo].[Roupas]
-    ([Doador_Id]);
+    ([DoadorId]);
 GO
 
 -- --------------------------------------------------

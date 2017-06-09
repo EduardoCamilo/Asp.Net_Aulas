@@ -18,7 +18,7 @@ namespace DoaRoupa.View
 
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
-            Session["Nome"] = txtnomeDoador.Text;
+            Session["CPF"] = txtnomeDoador.Text;
             Session["Roupa"] = txtRoupa.Text;
             Session["Tipo"] = rdbTipo.SelectedValue;
 
@@ -27,7 +27,9 @@ namespace DoaRoupa.View
 
             Roupa roupa = new Roupa();
 
-            roupa.Doador = ctrlD.LocalizarPorCPF(Session["Nome"].ToString());
+            Doador doador = ctrlD.LocalizarPorCPF(Session["CPF"].ToString());
+
+            roupa.DoadorId = doador.Id;
             roupa.DescricaoRoupa = Session["Roupa"].ToString();
             roupa.TipoRoupa = Session["Tipo"].ToString();
 

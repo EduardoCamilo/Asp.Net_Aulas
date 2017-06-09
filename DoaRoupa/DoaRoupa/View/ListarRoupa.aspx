@@ -4,7 +4,7 @@
 
     <h1>Lista de Doação</h1>
 
-    <asp:GridView ID="gvRoupas" runat="server" OnRowCommand="gvRoupas_RowCommand">
+    <asp:GridView ID="gvRoupas" runat="server" OnRowCommand="gvRoupas_RowCommand"  >
         <Columns>
             <asp:ButtonField CommandName="Excluir" Text="Excluir" />
             <asp:ButtonField CommandName="Editar" Text="Editar" />

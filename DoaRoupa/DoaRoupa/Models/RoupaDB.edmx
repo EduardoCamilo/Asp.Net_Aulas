@@ -20,7 +20,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="DescricaoRoupa" Type="nvarchar(max)" Nullable="false" />
     <Property Name="TipoRoupa" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Doador_Id" Type="int" Nullable="false" />
+    <Property Name="DoadorId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Doadores">
     <Key>
@@ -39,7 +39,7 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Roupa">
-        <PropertyRef Name="Doador_Id" />
+        <PropertyRef Name="DoadorId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -63,6 +63,7 @@
           <Property Name="DescricaoRoupa" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="TipoRoupa" Type="String" Nullable="false" />
           <NavigationProperty Name="Doador" Relationship="RoupaDB.RoupaDoador" FromRole="Roupa" ToRole="Doador" />
+          <Property Name="DoadorId" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Doador">
           <Key>
@@ -71,12 +72,20 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Telefone" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Roupa" Relationship="RoupaDB.RoupaDoador" FromRole="Doador" ToRole="Roupa" />
           <Property Name="CPF" Type="String" Nullable="false" />
+          <NavigationProperty Name="Roupa" Relationship="RoupaDB.RoupaDoador" FromRole="Doador" ToRole="Roupa" />
         </EntityType>
         <Association Name="RoupaDoador">
           <End Type="RoupaDB.Roupa" Role="Roupa" Multiplicity="*" />
           <End Type="RoupaDB.Doador" Role="Doador" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Doador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Roupa">
+              <PropertyRef Name="DoadorId" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -90,6 +99,7 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="DescricaoRoupa" ColumnName="DescricaoRoupa" />
           <ScalarProperty Name="TipoRoupa" ColumnName="TipoRoupa" />
+          <ScalarProperty Name="DoadorId" ColumnName="DoadorId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -103,14 +113,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="RoupaDoador" TypeName="RoupaDB.RoupaDoador" StoreEntitySet="Roupas">
-      <EndProperty Name="Doador">
-        <ScalarProperty Name="Id" ColumnName="Doador_Id" />
-      </EndProperty>
-      <EndProperty Name="Roupa">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

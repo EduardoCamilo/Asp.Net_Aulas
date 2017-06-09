@@ -17,6 +17,7 @@ namespace DoaRoupa.Models
         public int Id { get; set; }
         public string DescricaoRoupa { get; set; }
         public string TipoRoupa { get; set; }
+        public int DoadorId { get; set; }
     
         public virtual Doador Doador { get; set; }
     }

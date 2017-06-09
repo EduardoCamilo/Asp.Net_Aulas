@@ -22,7 +22,9 @@ namespace DoaRoupa.Controller
 
         public Doador LocalizarPorCPF(string cpf)
         {
-            return contexto.Doadores.Where(d => d.CPF == cpf).FirstOrDefault();
+            return contexto.Doadores.FirstOrDefault(d => d.CPF.Equals(cpf));
+
+            //return contexto.Doadores.Where(d => d.CPF.Equals(cpf)).FirstOrDefault();
 
             //return contexto.Doadores.Find(cpf);
         }

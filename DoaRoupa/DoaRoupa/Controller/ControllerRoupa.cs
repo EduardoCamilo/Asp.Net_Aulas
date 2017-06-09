@@ -11,6 +11,7 @@ namespace DoaRoupa.Controller
         public RoupaDBContainer contexto = new RoupaDBContainer();
         public void AdicionarRoupa(Roupa roupa)
         {
+
             contexto.Roupas.Add(roupa);
             contexto.SaveChanges();
         }
