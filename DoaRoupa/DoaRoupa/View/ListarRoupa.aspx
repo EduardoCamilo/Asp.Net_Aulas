@@ -12,6 +12,12 @@
     </asp:GridView>
 
     <hr />
+    <hr />
+
+    <asp:Label ID="lblID1" runat="server" Text="ID:"></asp:Label>
+    <asp:Label ID="lblID2" runat="server" Text=""></asp:Label>
+    <br /><br />
+
 
     <asp:Label ID="lblnomeDoardor" runat="server" Text="Nome do Doador"></asp:Label>
     <asp:TextBox ID="txtnomeDoadorEdt" runat="server"></asp:TextBox>

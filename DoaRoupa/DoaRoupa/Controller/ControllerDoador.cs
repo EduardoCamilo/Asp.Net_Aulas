@@ -29,6 +29,11 @@ namespace DoaRoupa.Controller
             //return contexto.Doadores.Find(cpf);
         }
 
+        public Doador LocalizarPorNome(string nome)
+        {
+            return contexto.Doadores.FirstOrDefault(d => d.Nome.Equals(nome));
+        }
+
         public void Editar(Doador doador)
         {
             contexto.Entry(doador).State = System.Data.Entity.EntityState.Modified;

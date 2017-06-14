@@ -47,13 +47,41 @@ namespace DoaRoupa.View
                     // Redirecionando para tela de edicao
                     Roupa r = ctrl.LocalizarPorId(idObjeto);
 
-                    txtnomeDoadorEdt.Text = r.Doador.Nome;
+                    txtnomeDoadorEdt.Text = r.Doador.CPF;
                     rdbTipoEdt.SelectedValue = r.TipoRoupa;
                     txtRoupaEdt.Text = r.DescricaoRoupa;
+                    lblID2.Text = r.Id.ToString();
 
-
-                 }
+                }
              }
          }
+
+        protected void btnSalvar_Click(object sender, EventArgs e)
+        {
+            ControllerRoupa ctrl = new ControllerRoupa();
+            ControllerDoador ctrlD = new ControllerDoador();
+
+            Session["CPF"] = txtnomeDoadorEdt.Text;
+            Session["Roupa"] = txtRoupaEdt.Text;
+            Session["Tipo"] = rdbTipoEdt.SelectedValue;
+
+            Roupa roupa = new Roupa();
+
+            Doador doador = ctrlD.LocalizarPorCPF(Session["CPF"].ToString());
+            
+            roupa.Id = Convert.ToInt32(lblID2.Text);
+            roupa.DoadorId = doador.Id;
+            roupa.DescricaoRoupa = Session["Roupa"].ToString();
+            roupa.TipoRoupa = Session["Tipo"].ToString();
+
+            ctrl.Editar(roupa);
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            txtnomeDoadorEdt.Text = String.Empty;
+            txtRoupaEdt.Text = String.Empty;
+            rdbTipoEdt.ClearSelection();
+        }
     }
 }

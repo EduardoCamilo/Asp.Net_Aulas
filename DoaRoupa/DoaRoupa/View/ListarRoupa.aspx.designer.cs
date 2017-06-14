@@ -22,6 +22,24 @@ namespace DoaRoupa.View {
         protected global::System.Web.UI.WebControls.GridView gvRoupas;
         
         /// <summary>
+        /// lblID1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblID1;
+        
+        /// <summary>
+        /// lblID2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblID2;
+        
+        /// <summary>
         /// lblnomeDoardor control.
         /// </summary>
         /// <remarks>
