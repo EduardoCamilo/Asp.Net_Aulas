@@ -21,7 +21,7 @@ namespace DoaRoupa.Controller
             return contexto.Roupas.ToList();
         }
 
-        public Roupa LocalizarPorNome(int id)
+        public Roupa LocalizarPorId(int id)
         {
             return contexto.Roupas.Find(id);
         }
@@ -32,9 +32,10 @@ namespace DoaRoupa.Controller
             contexto.SaveChanges();
         }
 
-        public void Excluir(Roupa roupa)
+        public void Excluir(int id)
         {
-            contexto.Entry(roupa).State = System.Data.Entity.EntityState.Deleted;
+            contexto.Entry(contexto.Roupas.FirstOrDefault(r => r.Id.Equals(id))).State = System.Data.Entity.EntityState.Deleted;
+            //contexto.Roupas.FirstOrDefault(r => r.Id.Equals(id)) = System.Data.Entity.EntityState.Deleted;
             contexto.SaveChanges();
         }
     }

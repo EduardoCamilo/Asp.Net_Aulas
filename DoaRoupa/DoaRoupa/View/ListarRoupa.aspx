@@ -10,4 +10,24 @@
             <asp:ButtonField CommandName="Editar" Text="Editar" />
         </Columns>
     </asp:GridView>
+
+    <hr />
+
+    <asp:Label ID="lblnomeDoardor" runat="server" Text="Nome do Doador"></asp:Label>
+    <asp:TextBox ID="txtnomeDoadorEdt" runat="server"></asp:TextBox>
+    <br /><br />
+
+    
+    <asp:RadioButtonList ID="rdbTipoEdt" runat="server">
+        <asp:ListItem Value="frio" Text="Roupa de frio" runat="server"/>
+        <asp:ListItem Value="calor" Text="Roupa de calor" runat="server"/>
+    </asp:RadioButtonList>
+    <br /><br />
+
+    <asp:Label ID="lblRoupa" runat="server" Text="Descrição da Roupa"></asp:Label>
+    <asp:TextBox ID="txtRoupaEdt" runat="server" TextMode="MultiLine"></asp:TextBox>
+    <br /><br />
+
+    <asp:Button CssClass="btn btn-primary" ID="btnSalvar" runat="server" Text="Salvar" OnClick="btnSalvar_Click" />
+    <asp:Button CssClass="btn btn-warning" ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />
 </asp:Content>

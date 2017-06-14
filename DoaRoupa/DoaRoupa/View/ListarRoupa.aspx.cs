@@ -1,4 +1,5 @@
 ﻿using DoaRoupa.Controller;
+using DoaRoupa.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +11,11 @@ namespace DoaRoupa.View
 {
     public partial class ListarRoupa : System.Web.UI.Page
     {
+
+        ControllerRoupa ctrl = new ControllerRoupa();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            ControllerRoupa ctrl = new ControllerRoupa();
-
             gvRoupas.DataSource = ctrl.Listar();
             gvRoupas.DataBind();
         }
@@ -35,15 +37,21 @@ namespace DoaRoupa.View
  
              if (command.Equals("Excluir"))
              {
-                 // Redirecionando para tela de exclusao
-                 Response.Redirect("Excluir.aspx");
+                // Chamando action do controller
+                ctrl.Excluir(idObjeto);
              }
              else
              {
                  if(command.Equals("Editar"))
                  {
-                     // Redirecionando para tela de edicao
-                     Response.Redirect("Editar.aspx");
+                    // Redirecionando para tela de edicao
+                    Roupa r = ctrl.LocalizarPorId(idObjeto);
+
+                    txtnomeDoadorEdt.Text = r.Doador.Nome;
+                    rdbTipoEdt.SelectedValue = r.TipoRoupa;
+                    txtRoupaEdt.Text = r.DescricaoRoupa;
+
+
                  }
              }
          }
