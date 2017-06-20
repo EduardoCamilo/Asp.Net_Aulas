@@ -19,7 +19,7 @@
     <br /><br />
 
 
-    <asp:Label ID="lblnomeDoardor" runat="server" Text="Nome do Doador"></asp:Label>
+    <asp:Label ID="lblnomeDoardor" runat="server" Text="CPF do Doador"></asp:Label>
     <asp:TextBox ID="txtnomeDoadorEdt" runat="server"></asp:TextBox>
     <br /><br />
 

@@ -3,7 +3,7 @@
 
     <h1>Cadastro de Roupa</h1>
 
-    <asp:Label ID="lblnomeDoardor" runat="server" Text="Nome do Doador"></asp:Label>
+    <asp:Label ID="lblnomeDoardor" runat="server" Text="CPF do Doador"></asp:Label>
     <asp:TextBox ID="txtnomeDoador" runat="server"></asp:TextBox>
     <br /><br />
 
