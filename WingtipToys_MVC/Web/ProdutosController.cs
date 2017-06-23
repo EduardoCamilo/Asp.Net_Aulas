@@ -9,7 +9,7 @@ using System.Web.Mvc;
 using BaseModels;
 using Web.Models;
 
-namespace Web.Controllers
+namespace Web
 {
     public class ProdutosController : Controller
     {
@@ -18,7 +18,7 @@ namespace Web.Controllers
         // GET: Produtos
         public ActionResult Index()
         {
-            var produtoes = db.Produtoes.Include(p => p._Categoria);
+            var produtoes = db.Produtos.Include(p => p._Categoria);
             return View(produtoes.ToList());
         }
 
@@ -29,7 +29,7 @@ namespace Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Produto produto = db.Produtoes.Find(id);
+            Produto produto = db.Produtos.Find(id);
             if (produto == null)
             {
                 return HttpNotFound();
@@ -53,7 +53,7 @@ namespace Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Produtoes.Add(produto);
+                db.Produtos.Add(produto);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -69,7 +69,7 @@ namespace Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Produto produto = db.Produtoes.Find(id);
+            Produto produto = db.Produtos.Find(id);
             if (produto == null)
             {
                 return HttpNotFound();
@@ -102,7 +102,7 @@ namespace Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Produto produto = db.Produtoes.Find(id);
+            Produto produto = db.Produtos.Find(id);
             if (produto == null)
             {
                 return HttpNotFound();
@@ -115,8 +115,8 @@ namespace Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Produto produto = db.Produtoes.Find(id);
-            db.Produtoes.Remove(produto);
+            Produto produto = db.Produtos.Find(id);
+            db.Produtos.Remove(produto);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -129,5 +129,7 @@ namespace Web.Controllers
             }
             base.Dispose(disposing);
         }
+
+
     }
 }
