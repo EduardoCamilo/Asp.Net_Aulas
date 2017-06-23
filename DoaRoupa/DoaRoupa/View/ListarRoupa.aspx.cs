@@ -16,6 +16,11 @@ namespace DoaRoupa.View
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            CarregarGrid();
+        }
+
+        private void CarregarGrid()
+        {
             gvRoupas.DataSource = ctrl.Listar();
             gvRoupas.DataBind();
         }
@@ -39,6 +44,7 @@ namespace DoaRoupa.View
              {
                 // Chamando action do controller
                 ctrl.Excluir(idObjeto);
+                CarregarGrid();
              }
              else
              {
@@ -51,6 +57,8 @@ namespace DoaRoupa.View
                     rdbTipoEdt.SelectedValue = r.TipoRoupa;
                     txtRoupaEdt.Text = r.DescricaoRoupa;
                     lblID2.Text = r.Id.ToString();
+
+                    CarregarGrid();
 
                 }
              }
@@ -75,6 +83,10 @@ namespace DoaRoupa.View
             roupa.TipoRoupa = Session["Tipo"].ToString();
 
             ctrl.Editar(roupa);
+
+            txtnomeDoadorEdt.Text = String.Empty;
+            txtRoupaEdt.Text = String.Empty;
+            rdbTipoEdt.ClearSelection();
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)

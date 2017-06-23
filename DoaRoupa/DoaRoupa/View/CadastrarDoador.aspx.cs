@@ -31,6 +31,11 @@ namespace DoaRoupa.View
             doador.Telefone = Convert.ToInt32(Session["Telefone"].ToString());
 
             ctrl.AdicionarDoador(doador);
+
+
+            txtCPFDoador.Text = String.Empty;
+            txtNomeDoador.Text = String.Empty;
+            txtTelefoneDoador.Text = String.Empty;
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)

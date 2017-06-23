@@ -34,6 +34,10 @@ namespace DoaRoupa.View
             roupa.TipoRoupa = Session["Tipo"].ToString();
 
             ctrl.AdicionarRoupa(roupa);
+
+            txtnomeDoador.Text = String.Empty;
+            txtRoupa.Text = String.Empty;
+            rdbTipo.ClearSelection();
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)

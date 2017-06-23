@@ -2,12 +2,18 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
     <h1>Lista de Doação</h1>
 
-    <asp:GridView ID="gvRoupas" runat="server" OnRowCommand="gvRoupas_RowCommand">
+    <asp:GridView ID="gvRoupas" runat="server" OnRowCommand="gvRoupas_RowCommand" AutoGenerateColumns="False">
         <Columns>
             <asp:ButtonField CommandName="Excluir" Text="Excluir" />
             <asp:ButtonField CommandName="Editar" Text="Editar" />
+            <asp:BoundField HeaderText="Código" DataField="Id" />
+            <asp:BoundField HeaderText="Nome do Doador" DataField="Doador.Nome" />
+            <asp:BoundField HeaderText="Descrição da Roupa" DataField="TipoRoupa" />
+            <asp:BoundField HeaderText="Tipo da Roupa" DataField="DescricaoRoupa" />
         </Columns>
     </asp:GridView>
 
@@ -25,8 +31,8 @@
 
     
     <asp:RadioButtonList ID="rdbTipoEdt" runat="server">
-        <asp:ListItem Value="frio" Text="Roupa de frio" runat="server"/>
-        <asp:ListItem Value="calor" Text="Roupa de calor" runat="server"/>
+        <asp:ListItem Value="Frio" Text="Roupa de frio" runat="server"/>
+        <asp:ListItem Value="Calor" Text="Roupa de calor" runat="server"/>
     </asp:RadioButtonList>
     <br /><br />
 
@@ -36,4 +42,7 @@
 
     <asp:Button CssClass="btn btn-primary" ID="btnSalvar" runat="server" Text="Salvar" OnClick="btnSalvar_Click" />
     <asp:Button CssClass="btn btn-warning" ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />
+
+            </ContentTemplate>
+    </asp:UpdatePanel>
 </asp:Content>

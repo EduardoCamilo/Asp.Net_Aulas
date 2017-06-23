@@ -9,8 +9,8 @@
 
     
     <asp:RadioButtonList ID="rdbTipo" runat="server">
-        <asp:ListItem Value="frio" Text="Roupa de frio" runat="server"/>
-        <asp:ListItem Value="calor" Text="Roupa de calor" runat="server"/>
+        <asp:ListItem Value="Frio" Text="Roupa de frio" runat="server"/>
+        <asp:ListItem Value="Calor" Text="Roupa de calor" runat="server"/>
     </asp:RadioButtonList>
     <br /><br />
 
