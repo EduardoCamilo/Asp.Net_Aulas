@@ -126,17 +126,6 @@ namespace Web.Controllers
             return View(categoria);
         }
 
-        [HttpPost]
-        public ActionResult Delete(Categoria categoria)
-        {
-            //if (ModelState.IsValid)
-            //{
-            //    db.Entry(categoria).State = System.Data.Entity.EntityState.Modified;
-            //    db.SaveChanges();
-            //    return RedirectToAction("Index");
-            //}
-            return View(categoria);
-        }
 
         [HttpPost]
         [ActionName("Delete")]
